@@ -1,10 +1,10 @@
 # DeepSeek 官网复刻 (DeepSeek Website Clone)
 
-一个对 [deepseek.com](https://www.deepseek.com/) 首页的静态复刻，使用纯 HTML / CSS / JavaScript 实现，无构建步骤、无外部依赖。
+对 [deepseek.com](https://www.deepseek.com/) 首页的高保真静态复刻，使用纯 HTML / CSS / JavaScript 实现，无构建步骤、无外部依赖。布局、配色、文案、链接均与原站一致。
 
 ## 预览 / Preview
 
-直接在浏览器中打开 `index.html` 即可，或启动一个本地静态服务器：
+直接在浏览器中打开 `index.html`，或启动本地静态服务器：
 
 ```bash
 python3 -m http.server 8000
@@ -15,19 +15,19 @@ python3 -m http.server 8000
 
 | 文件 | 说明 |
 | --- | --- |
-| `index.html` | 页面结构：公告条、导航、Hero、模型、特性、CTA、页脚 |
-| `styles.css` | 全部样式，响应式，CSS 变量主题 |
-| `script.js` | 交互：公告关闭、移动端菜单、中英文切换、滚动阴影 |
+| `index.html` | 页面结构：全屏 Hero（公告条 / Logo / 标语 / 双卡片）+ 页脚 |
+| `styles.css` | 样式，沿用原站 slate + branding(#4d6bfe) 配色，响应式 |
+| `script.js` | 轻量交互（Hero 背景视差） |
+| `logo.png` | 原站 DeepSeek Logo |
+| `banner-background.webp` | 原站首页背景图 |
 
-## 功能 / Features
+## 还原要点 / Fidelity
 
-- 顶部公告横幅（可关闭）
-- 粘性导航栏 + 移动端汉堡菜单
-- 深色渐变 Hero 区，主标题「探索未至之境」
-- 两个主入口卡片：开始对话 / API 平台
-- 模型展示、产品特性、CTA 区块
-- 多栏页脚（研究 / 产品 / 法律 / 加入我们）
-- 中英文一键切换
-- 完全响应式布局
+- 全屏居中 Hero，使用原站背景图
+- 左上角 Logo、右上角链接（API 文档 / 获取 App / English）
+- 顶部公告：DeepSeek-V4 预览版本发布……
+- 居中大 Logo + 标语「探索未至之境」
+- 两张卡片：开始对话（→ chat.deepseek.com）/ API 开放平台（→ platform.deepseek.com）
+- 页脚四栏（研究 / 产品 / 法务 & 安全 / 加入我们）+ 版权与备案信息，链接均指向真实地址
 
-> 本项目仅用于学习与演示，与深度求索（DeepSeek）官方无关。
+> 本项目仅用于学习与演示，与深度求索（DeepSeek）官方无关。Logo 及背景图版权归 DeepSeek 所有。
