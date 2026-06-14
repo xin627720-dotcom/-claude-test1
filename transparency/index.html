@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DeepSeek 透明度中心：了解 DeepSeek 已发布的主要模型、模型原理与训练方法说明。" />
+  <title>透明度中心 - DeepSeek</title>
+  <link rel="icon" href="/logo.png" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="page page--light">
+    <!-- top-left logo -->
+    <a class="tp-logo" href="/" aria-label="DeepSeek">
+      <img src="/logo.png" width="780" height="165" alt="DeepSeek Logo" />
+    </a>
+
+    <!-- ============ Transparency hero ============ -->
+    <section class="tp-hero" style="background-image:url('/banner-background.webp')">
+      <div class="tp-hero__inner">
+        <h1 class="tp-hero__title">透明度</h1>
+        <p class="tp-hero__subtitle">了解 DeepSeek 已发布的主要模型</p>
+      </div>
+    </section>
+
+    <!-- floating disclosure card -->
+    <div class="tp-disclosure-wrap">
+      <a class="tp-disclosure" href="https://cdn.deepseek.com/policies/zh-CN/model-algorithm-disclosure.html" target="_blank" rel="noopener">
+        <div class="tp-disclosure__text">模型原理与训练方法说明</div>
+        <div class="tp-disclosure__cta"><span>查看详情</span> <span aria-hidden="true">›</span></div>
+      </a>
+    </div>
+
+    <!-- ============ Model overview ============ -->
+    <section class="tp-overview">
+      <h2 class="tp-overview__title">模型概览</h2>
+      <p class="tp-overview__lead">以下为 DeepSeek 已发布的主要模型信息，包含模型名称、发布时间、技术报告与模型卡</p>
+
+      <div class="tp-models">
+        <!-- V4 -->
+        <div class="tp-row">
+          <div class="tp-row__left">
+            <span class="tp-badge" style="background:linear-gradient(135deg,#4d6bfe,#7a5cff)">V4.0</span>
+            <div class="tp-row__meta">
+              <div class="tp-row__name">DeepSeek-V4 <span class="tp-new">New</span></div>
+              <div class="tp-row__date">发布时间：2026年4月24日</div>
+            </div>
+          </div>
+          <div class="tp-row__links">
+            <a href="https://fe-static.deepseek.com/chat/transparency/deepseek-V4-model-card-CN_3c2bd9.pdf" target="_blank" rel="noopener">模型卡</a>
+            <a href="https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro" target="_blank" rel="noopener">技术报告</a>
+          </div>
+        </div>
+
+        <!-- V3.2 -->
+        <div class="tp-row">
+          <div class="tp-row__left">
+            <span class="tp-badge" style="background:linear-gradient(135deg,#4166d5,#509fff)">V3.2</span>
+            <div class="tp-row__meta">
+              <div class="tp-row__name">DeepSeek-V3.2</div>
+              <div class="tp-row__date">发布时间：2025年12月1日</div>
+            </div>
+          </div>
+          <div class="tp-row__links">
+            <a href="https://fe-static.deepseek.com/chat/transparency/deepseek-v3.2-model-card-0414-CN.pdf" target="_blank" rel="noopener">模型卡</a>
+            <a href="https://huggingface.co/deepseek-ai/DeepSeek-V3.2" target="_blank" rel="noopener">技术报告</a>
+          </div>
+        </div>
+
+        <!-- V3 -->
+        <div class="tp-row">
+          <div class="tp-row__left">
+            <span class="tp-badge" style="background:linear-gradient(135deg,#3a55e0,#4d6bfe)">V3</span>
+            <div class="tp-row__meta">
+              <div class="tp-row__name">DeepSeek-V3</div>
+              <div class="tp-row__date">发布时间：2024年12月26日</div>
+            </div>
+          </div>
+          <div class="tp-row__links">
+            <a href="https://github.com/deepseek-ai/DeepSeek-V3" target="_blank" rel="noopener">技术报告</a>
+          </div>
+        </div>
+
+        <!-- Coder-V2 -->
+        <div class="tp-row">
+          <div class="tp-row__left">
+            <span class="tp-badge" style="background:linear-gradient(135deg,#0ea5e9,#509fff)">CV2</span>
+            <div class="tp-row__meta">
+              <div class="tp-row__name">DeepSeek-Coder-V2</div>
+              <div class="tp-row__date">发布时间：2024年6月17日</div>
+            </div>
+          </div>
+          <div class="tp-row__links">
+            <a href="https://github.com/deepseek-ai/DeepSeek-Coder-V2" target="_blank" rel="noopener">技术报告</a>
+          </div>
+        </div>
+
+        <!-- V2 -->
+        <div class="tp-row">
+          <div class="tp-row__left">
+            <span class="tp-badge" style="background:linear-gradient(135deg,#6366f1,#7a5cff)">V2</span>
+            <div class="tp-row__meta">
+              <div class="tp-row__name">DeepSeek-V2</div>
+              <div class="tp-row__date">发布时间：2024年5月7日</div>
+            </div>
+          </div>
+          <div class="tp-row__links">
+            <a href="https://github.com/deepseek-ai/DeepSeek-V2" target="_blank" rel="noopener">技术报告</a>
+          </div>
+        </div>
+
+        <!-- MoE -->
+        <div class="tp-row">
+          <div class="tp-row__left">
+            <span class="tp-badge" style="background:linear-gradient(135deg,#8b5cf6,#a78bfa)">MoE</span>
+            <div class="tp-row__meta">
+              <div class="tp-row__name">DeepSeek-MoE</div>
+              <div class="tp-row__date">发布时间：2024年1月11日</div>
+            </div>
+          </div>
+          <div class="tp-row__links">
+            <a href="https://github.com/deepseek-ai/DeepSeek-MoE" target="_blank" rel="noopener">技术报告</a>
+          </div>
+        </div>
+
+        <!-- Coder -->
+        <div class="tp-row">
+          <div class="tp-row__left">
+            <span class="tp-badge" style="background:linear-gradient(135deg,#14b8a6,#22d3ee)">Code</span>
+            <div class="tp-row__meta">
+              <div class="tp-row__name">DeepSeek-Coder</div>
+              <div class="tp-row__date">发布时间：2023年11月2日</div>
+            </div>
+          </div>
+          <div class="tp-row__links">
+            <a href="https://github.com/deepseek-ai/DeepSeek-Coder" target="_blank" rel="noopener">技术报告</a>
+          </div>
+        </div>
+
+        <!-- LLM -->
+        <div class="tp-row">
+          <div class="tp-row__left">
+            <span class="tp-badge" style="background:linear-gradient(135deg,#64748b,#94a3b8)">LLM</span>
+            <div class="tp-row__meta">
+              <div class="tp-row__name">DeepSeek-LLM</div>
+              <div class="tp-row__date">发布时间：2023年11月29日</div>
+            </div>
+          </div>
+          <div class="tp-row__links">
+            <a href="https://github.com/deepseek-ai/DeepSeek-LLM" target="_blank" rel="noopener">技术报告</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="tp-back"><a class="ds-link" href="/">‹ 返回首页</a></p>
+    </section>
+  </main>
+
+  <script src="/script.js"></script>
+</body>
+</html>

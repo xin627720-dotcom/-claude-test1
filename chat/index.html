@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DeepSeek - 全新一代 AI 智能助手" />
+  <title>DeepSeek - 探索未至之境</title>
+  <link rel="icon" href="/logo.png" />
+  <link rel="stylesheet" href="/chat.css" />
+</head>
+<body>
+  <div class="chat-app">
+    <!-- ============ Sidebar ============ -->
+    <aside class="cs" id="sidebar">
+      <div class="cs__top">
+        <div class="cs__brand">
+          <img src="/logo.png" alt="DeepSeek" />
+        </div>
+        <button class="cs__icon-btn" id="collapseBtn" title="收起边栏" aria-label="收起边栏">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M9 6l-6 6 6 6M21 12H4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+
+      <button class="cs__new" id="newChat">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        开启新对话
+      </button>
+
+      <div class="cs__search">
+        <svg viewBox="0 0 24 24" width="16" height="16"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input type="text" placeholder="搜索历史记录" />
+      </div>
+
+      <nav class="cs__history">
+        <div class="cs__group">今天</div>
+        <a class="cs__item cs__item--active">DeepSeek 官网复刻方案</a>
+        <a class="cs__item">React 组件性能优化</a>
+        <a class="cs__item">周报：本周进展汇总</a>
+        <div class="cs__group">七天内</div>
+        <a class="cs__item">Python 数据清洗脚本</a>
+        <a class="cs__item">一篇关于深海的科普短文</a>
+        <a class="cs__item">SQL 查询优化建议</a>
+        <a class="cs__item">英文邮件润色</a>
+        <div class="cs__group">三十天内</div>
+        <a class="cs__item">机器学习入门路线</a>
+        <a class="cs__item">旅行行程规划：京都</a>
+      </nav>
+
+      <div class="cs__user">
+        <div class="cs__avatar">游</div>
+        <span>个人信息</span>
+      </div>
+    </aside>
+
+    <!-- ============ Main ============ -->
+    <main class="cm">
+      <header class="cm__header">
+        <button class="cm__menu" id="openSidebar" aria-label="展开边栏">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <span class="cm__title">DeepSeek</span>
+        <div class="cm__header-right">
+          <a class="cm__getapp" href="https://download.deepseek.com/app/" target="_blank" rel="noopener">获取 App</a>
+        </div>
+      </header>
+
+      <div class="cm__body" id="chatBody">
+        <div class="cm__welcome" id="welcome">
+          <img class="cm__welcome-logo" src="/logo.png" alt="DeepSeek" />
+          <h1 class="cm__welcome-title">我是 DeepSeek，很高兴见到你！</h1>
+          <p class="cm__welcome-sub">我可以帮你写代码、读文件、写作各种创意内容，请把你的任务交给我吧~</p>
+        </div>
+      </div>
+
+      <div class="cm__composer">
+        <div class="cm__inputbox">
+          <textarea id="input" rows="1" placeholder="给 DeepSeek 发送消息"></textarea>
+          <div class="cm__tools">
+            <button class="cm__chip" data-toggle id="thinkBtn">
+              <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 3a7 7 0 0 0-4 12.7V18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3A7 7 0 0 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 22h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              深度思考 (R1)
+            </button>
+            <button class="cm__chip" data-toggle id="searchBtn">
+              <svg viewBox="0 0 24 24" width="16" height="16"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M21 21l-4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              联网搜索
+            </button>
+            <div class="cm__spacer"></div>
+            <button class="cm__attach" title="附件" aria-label="附件">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path d="M21 12.5 12.5 21a5 5 0 0 1-7-7l9-9a3.5 3.5 0 0 1 5 5l-9 9a2 2 0 0 1-3-3l8-8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button class="cm__send" id="sendBtn" aria-label="发送">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 20V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+        <p class="cm__foot">内容由 AI 生成，请仔细甄别 · 本页为静态复刻演示，未接入真实模型</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="/chat.js"></script>
+</body>
+</html>

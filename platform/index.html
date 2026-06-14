@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DeepSeek 开放平台 - 接入最新模型，快速集成、流畅体验" />
+  <title>DeepSeek 开放平台</title>
+  <link rel="icon" href="/logo.png" />
+  <link rel="stylesheet" href="/platform.css" />
+</head>
+<body>
+  <div class="pf-app">
+    <!-- ============ Sidebar ============ -->
+    <aside class="pf-side" id="pfSide">
+      <div class="pf-side__brand">
+        <img src="/logo.png" alt="DeepSeek" />
+        <span>开放平台</span>
+      </div>
+
+      <nav class="pf-nav">
+        <a class="pf-nav__item pf-nav__item--active" href="#usage">
+          <span class="pf-nav__ic">📊</span> 用量信息
+        </a>
+        <a class="pf-nav__item" href="https://api-docs.deepseek.com/zh-cn/" target="_blank" rel="noopener">
+          <span class="pf-nav__ic">📄</span> 接口文档
+        </a>
+        <a class="pf-nav__item" href="https://api-docs.deepseek.com/zh-cn/quick_start/pricing" target="_blank" rel="noopener">
+          <span class="pf-nav__ic">💰</span> 接口价格
+        </a>
+        <a class="pf-nav__item" href="#keys">
+          <span class="pf-nav__ic">🔑</span> API keys
+        </a>
+        <a class="pf-nav__item" href="#limit">
+          <span class="pf-nav__ic">⏱️</span> 限速说明
+        </a>
+        <a class="pf-nav__item" href="#errors">
+          <span class="pf-nav__ic">⚠️</span> 错误码
+        </a>
+        <div class="pf-nav__divider"></div>
+        <a class="pf-nav__item" href="#topup">
+          <span class="pf-nav__ic">💳</span> 充值
+        </a>
+        <a class="pf-nav__item" href="#bills">
+          <span class="pf-nav__ic">🧾</span> 账单详情
+        </a>
+      </nav>
+
+      <div class="pf-side__user">
+        <div class="pf-avatar">游</div>
+        <div class="pf-side__user-info">
+          <div>游客用户</div>
+          <div class="pf-side__user-sub">user@example.com</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ============ Main ============ -->
+    <main class="pf-main">
+      <header class="pf-top">
+        <button class="pf-burger" id="pfBurger" aria-label="菜单">☰</button>
+        <h1 class="pf-top__title">用量信息</h1>
+        <div class="pf-top__right">
+          <a class="pf-btn pf-btn--ghost" href="https://api-docs.deepseek.com/zh-cn/" target="_blank" rel="noopener">查看文档</a>
+          <a class="pf-btn pf-btn--primary" href="#topup">充值</a>
+        </div>
+      </header>
+
+      <div class="pf-content">
+        <!-- balance cards -->
+        <section class="pf-cards" id="usage">
+          <div class="pf-card">
+            <div class="pf-card__label">账户总余额</div>
+            <div class="pf-card__value">¥ <span>0.00</span></div>
+            <div class="pf-card__hint">含赠送与充值余额</div>
+          </div>
+          <div class="pf-card">
+            <div class="pf-card__label">赠送余额</div>
+            <div class="pf-card__value">¥ <span>0.00</span></div>
+            <div class="pf-card__hint">有效期至 —</div>
+          </div>
+          <div class="pf-card">
+            <div class="pf-card__label">充值余额</div>
+            <div class="pf-card__value">¥ <span>0.00</span></div>
+            <div class="pf-card__hint">永久有效</div>
+          </div>
+          <div class="pf-card pf-card--accent">
+            <div class="pf-card__label">本月消耗 tokens</div>
+            <div class="pf-card__value"><span>0</span></div>
+            <div class="pf-card__hint">输入 0 · 输出 0</div>
+          </div>
+        </section>
+
+        <!-- usage chart placeholder -->
+        <section class="pf-panel">
+          <div class="pf-panel__head">
+            <h2 class="pf-panel__title">用量趋势</h2>
+            <div class="pf-tabs">
+              <button class="pf-tab pf-tab--active">近 7 天</button>
+              <button class="pf-tab">近 30 天</button>
+            </div>
+          </div>
+          <div class="pf-chart">
+            <svg viewBox="0 0 600 180" preserveAspectRatio="none" width="100%" height="180">
+              <polyline points="0,160 80,150 160,120 240,135 320,90 400,100 480,60 600,75"
+                fill="none" stroke="#4d6bfe" stroke-width="2.5" />
+              <polyline points="0,160 80,150 160,120 240,135 320,90 400,100 480,60 600,75 600,180 0,180"
+                fill="rgba(77,107,254,.08)" stroke="none" />
+            </svg>
+            <div class="pf-chart__axis"><span>周一</span><span>周二</span><span>周三</span><span>周四</span><span>周五</span><span>周六</span><span>周日</span></div>
+          </div>
+        </section>
+
+        <!-- models & pricing -->
+        <section class="pf-panel">
+          <div class="pf-panel__head">
+            <h2 class="pf-panel__title">模型与价格</h2>
+            <span class="pf-panel__sub">单位：元 / 百万 tokens</span>
+          </div>
+          <div class="pf-table">
+            <div class="pf-table__head">
+              <span>模型</span><span>上下文</span><span>输入（缓存命中）</span><span>输入（未命中）</span><span>输出</span>
+            </div>
+            <div class="pf-table__row">
+              <span><b>deepseek-chat</b><em>DeepSeek-V3</em></span><span>128K</span><span>0.5</span><span>2</span><span>8</span>
+            </div>
+            <div class="pf-table__row">
+              <span><b>deepseek-reasoner</b><em>DeepSeek-R1</em></span><span>128K</span><span>1</span><span>4</span><span>16</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- API keys -->
+        <section class="pf-panel" id="keys">
+          <div class="pf-panel__head">
+            <h2 class="pf-panel__title">API keys</h2>
+            <button class="pf-btn pf-btn--primary" id="createKey">+ 创建 API key</button>
+          </div>
+          <div class="pf-table pf-table--keys">
+            <div class="pf-table__head">
+              <span>名称</span><span>Key</span><span>创建时间</span><span>最近使用</span><span></span>
+            </div>
+            <div class="pf-empty" id="keysEmpty">
+              你还没有创建任何 API key，点击右上角「创建 API key」开始接入。
+            </div>
+          </div>
+          <p class="pf-note">提示：本页为 DeepSeek 开放平台的静态复刻演示，未接入真实账户与计费系统。</p>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="/platform.js"></script>
+</body>
+</html>
