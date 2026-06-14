@@ -11,15 +11,29 @@ python3 -m http.server 8000
 # 然后访问 http://localhost:8000
 ```
 
+## 页面 / Pages
+
+主站（www.deepseek.com）共 4 个页面，全部复刻：
+
+| 路径 | 说明 |
+| --- | --- |
+| `/` | 中文首页 |
+| `/en/` | 英文首页 |
+| `/transparency/` | 透明度中心（中文） |
+| `/en/transparency/` | 透明度中心（英文） |
+
+> `chat.` / `platform.` / `api-docs.` 是独立 Web 应用（各有后端与登录），不属于 www 主站，首页卡片/页脚按原站链接跳转到这些真实地址。
+
 ## 文件结构 / Structure
 
 | 文件 | 说明 |
 | --- | --- |
-| `index.html` | 页面结构：全屏 Hero（公告条 / Logo / 标语 / 双卡片）+ 页脚 |
+| `index.html`, `en/index.html` | 中/英文首页：全屏 Hero（公告条 / Logo / 标语 / 双卡片）+ 页脚 |
+| `transparency/index.html`, `en/transparency/index.html` | 透明度中心：暗色 Hero + 说明卡 + 模型概览列表 |
 | `styles.css` | 样式，沿用原站 slate + branding(#4d6bfe) 配色，响应式 |
 | `script.js` | 轻量交互（Hero 背景视差） |
-| `logo.png` | 原站 DeepSeek Logo |
-| `banner-background.webp` | 原站首页背景图 |
+| `logo.png` / `banner-background.webp` | 原站 Logo 与背景图 |
+| `vercel.json` | cleanUrls + trailingSlash，匹配原站 URL 风格 |
 
 ## 还原要点 / Fidelity
 
