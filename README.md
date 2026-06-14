@@ -21,8 +21,10 @@ python3 -m http.server 8000
 | `/en/` | 英文首页 |
 | `/transparency/` | 透明度中心（中文） |
 | `/en/transparency/` | 透明度中心（英文） |
+| `/chat/` | 聊天界面（chat.deepseek.com 视觉复刻） |
+| `/platform/` | API 开放平台控制台（platform.deepseek.com 视觉复刻） |
 
-> `chat.` / `platform.` / `api-docs.` 是独立 Web 应用（各有后端与登录），不属于 www 主站，首页卡片/页脚按原站链接跳转到这些真实地址。
+> `chat.` / `platform.` 是带登录的纯客户端 SPA（服务端返回 202 空壳，无法抓取源码），`/chat/` 与 `/platform/` 为**高保真静态视觉复刻**，未接入后端 / 模型 / 计费。首页卡片与页脚已指向这两个本地页面，使克隆站自成一体。`api-docs.` 等文档站仍跳转真实地址。
 
 ## 文件结构 / Structure
 

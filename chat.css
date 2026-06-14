@@ -1,0 +1,145 @@
+/* ============================================================
+   DeepSeek chat UI — static visual replica of chat.deepseek.com
+   ============================================================ */
+:root {
+  --branding: #4d6bfe;
+  --branding-dark: #3a55e0;
+  --sidebar-bg: #f3f5fa;
+  --hover: #e9edf6;
+  --text: #1f2329;
+  --muted: #8b909a;
+  --line: #e7e9f0;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: #fff;
+}
+button { font-family: inherit; cursor: pointer; }
+
+.chat-app { display: flex; height: 100vh; overflow: hidden; }
+
+/* ---------- sidebar ---------- */
+.cs {
+  width: 260px;
+  flex-shrink: 0;
+  background: var(--sidebar-bg);
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  transition: margin-left .25s ease;
+}
+.cs.is-collapsed { margin-left: -260px; }
+.cs__top { display: flex; align-items: center; justify-content: space-between; padding: 6px 4px 14px; }
+.cs__brand img { height: 26px; width: auto; display: block; }
+.cs__icon-btn {
+  border: none; background: none; color: var(--muted);
+  width: 32px; height: 32px; border-radius: 8px; display: grid; place-items: center;
+}
+.cs__icon-btn:hover { background: var(--hover); color: var(--text); }
+
+.cs__new {
+  display: flex; align-items: center; gap: 8px; justify-content: center;
+  width: 100%; padding: 10px; margin-bottom: 12px;
+  background: #dbe4ff; color: var(--branding); font-weight: 600; font-size: 14px;
+  border: none; border-radius: 12px; transition: background .2s ease;
+}
+.cs__new:hover { background: #cdd9ff; }
+
+.cs__search {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 10px; margin-bottom: 8px;
+  background: #fff; border: 1px solid var(--line); border-radius: 10px; color: var(--muted);
+}
+.cs__search input { border: none; outline: none; background: none; font-size: 13px; width: 100%; color: var(--text); }
+
+.cs__history { flex: 1; overflow-y: auto; margin: 0 -4px; padding: 0 4px; }
+.cs__group { font-size: 12px; color: var(--muted); padding: 14px 8px 6px; }
+.cs__item {
+  display: block; padding: 9px 10px; border-radius: 8px; font-size: 14px;
+  color: #3b4049; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  cursor: pointer;
+}
+.cs__item:hover { background: var(--hover); }
+.cs__item--active { background: #dbe4ff; color: var(--branding); }
+
+.cs__user {
+  display: flex; align-items: center; gap: 10px; padding: 10px 8px; margin-top: 8px;
+  border-radius: 10px; cursor: pointer; font-size: 14px;
+}
+.cs__user:hover { background: var(--hover); }
+.cs__avatar {
+  width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--branding), #7a5cff);
+  color: #fff; display: grid; place-items: center; font-size: 13px; font-weight: 600;
+}
+
+/* ---------- main ---------- */
+.cm { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.cm__header {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px; border-bottom: 1px solid transparent;
+}
+.cm__menu { display: none; border: none; background: none; color: var(--text); }
+.cm__title { font-size: 18px; font-weight: 700; }
+.cm__header-right { margin-left: auto; }
+.cm__getapp {
+  font-size: 13px; color: var(--branding); text-decoration: none;
+  border: 1px solid #cdd9ff; padding: 6px 12px; border-radius: 999px;
+}
+.cm__getapp:hover { background: #eef2ff; }
+
+.cm__body { flex: 1; overflow-y: auto; display: flex; flex-direction: column; }
+.cm__welcome { margin: auto; text-align: center; padding: 24px; max-width: 640px; }
+.cm__welcome-logo { height: 44px; width: auto; margin-bottom: 18px; }
+.cm__welcome-title { font-size: 26px; font-weight: 700; margin: 0 0 10px; }
+.cm__welcome-sub { font-size: 15px; color: var(--muted); margin: 0; line-height: 1.7; }
+
+/* chat messages */
+.msg { max-width: 768px; width: 100%; margin: 0 auto; padding: 16px 24px; display: flex; gap: 14px; }
+.msg__avatar { width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0; display: grid; place-items: center; font-size: 13px; color: #fff; }
+.msg--user .msg__avatar { background: #c7cdd9; color: #fff; }
+.msg--ai .msg__avatar { background: linear-gradient(135deg, var(--branding), #7a5cff); }
+.msg__bubble { font-size: 15px; line-height: 1.8; padding-top: 4px; white-space: pre-wrap; }
+.msg--user .msg__bubble { background: #eff3ff; padding: 10px 14px; border-radius: 12px; }
+
+/* ---------- composer ---------- */
+.cm__composer { padding: 8px 24px 18px; }
+.cm__inputbox {
+  max-width: 768px; margin: 0 auto;
+  border: 1px solid var(--line); border-radius: 22px; background: #fff;
+  padding: 12px 14px 10px; box-shadow: 0 2px 16px rgba(31, 41, 90, .06);
+}
+.cm__inputbox textarea {
+  width: 100%; border: none; outline: none; resize: none; font-family: inherit;
+  font-size: 15px; line-height: 1.6; max-height: 200px; color: var(--text); background: none;
+}
+.cm__inputbox textarea::placeholder { color: #aab0bc; }
+.cm__tools { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+.cm__chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  border: 1px solid var(--line); background: #fff; color: #4b5563;
+  padding: 6px 12px; border-radius: 999px; font-size: 13px; transition: all .2s ease;
+}
+.cm__chip:hover { border-color: #c4cbdb; }
+.cm__chip.is-active { background: #eef2ff; border-color: #c5d2ff; color: var(--branding); }
+.cm__spacer { flex: 1; }
+.cm__attach { border: none; background: none; color: var(--muted); width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; }
+.cm__attach:hover { background: var(--hover); color: var(--text); }
+.cm__send {
+  border: none; width: 36px; height: 36px; border-radius: 50%;
+  background: var(--branding); color: #fff; display: grid; place-items: center; transition: background .2s ease;
+}
+.cm__send:hover { background: var(--branding-dark); }
+.cm__send:disabled { background: #c9d2ea; cursor: not-allowed; }
+.cm__foot { text-align: center; font-size: 12px; color: var(--muted); margin: 10px 0 0; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 768px) {
+  .cs { position: fixed; z-index: 30; height: 100%; box-shadow: 2px 0 20px rgba(0,0,0,.12); }
+  .cs.is-collapsed { margin-left: -280px; }
+  .cm__menu { display: grid; place-items: center; }
+}
